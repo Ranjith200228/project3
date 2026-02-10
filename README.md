@@ -18,6 +18,8 @@ https://project3-610853696776.us-east1.run.app
 https://console.cloud.google.com/run/detail/us-east1/project3/metrics?project=convai-449103  
 
 ✅ Fully serverless deployment — no local setup required.
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/e03e8983-474a-4fb6-bc95-895c448ff48a" />
+
 
 ---
 
