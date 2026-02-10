@@ -172,14 +172,29 @@ This structure supports efficient routing, scalable API communication, and maint
 export GOOGLE_APPLICATION_CREDENTIALS="path/to/service-account.json"
 
 ---
+**Windows (PowerShell)**
 
-## 🏗️ High-Level Architecture
+setx GOOGLE_APPLICATION_CREDENTIALS "path\to\service-account.json"
+📦 Install Dependencies
+pip install -r requirements.txt
+▶️ Run Application
+python main.py
+Open your browser:
 
-```mermaid
-flowchart LR
-    A[Client Browser] --> B[HTML + Flask UI]
-    B --> C[Flask Backend]
-    C --> D[Vertex AI Multimodal LLM]
-    D --> E[Transcription + Sentiment]
-    E --> F[Timestamped Storage]
-    F --> G[Cloud Run Deployment]
+👉 http://127.0.0.1:5000
+
+**🐳 Deploy to Cloud Run**
+📦 Build Container
+gcloud builds submit --tag gcr.io/<PROJECT_ID>/convai
+**🚀 Deploy**
+gcloud run deploy convai \
+  --image gcr.io/<PROJECT_ID>/convai \
+  --platform managed \
+  --region us-east1 \
+  --allow-unauthenticated
+Cloud Run automatically provisions:
+
+✅ HTTPS endpoint
+✅ Load balancing
+✅ Auto-scaling
+✅ High availability
